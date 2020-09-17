@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.embed.swing.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1"
+         xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biometrics.demo.controller.MainController">
+    <tabs>
+        <Tab closable="false" text="Detect Face">
+            <content>
+                <VBox>
+                    <Pane fx:id="paneDetect" prefHeight="540.0" prefWidth="466.0" style="-fx-border-color: darkgray">
+                        <children>
+                            <Pane fx:id="panelHeader" layoutY="14.0" prefHeight="37.0" prefWidth="790.0"
+                                  style="-fx-border-color: black;">
+                                <children>
+                                    <Button fx:id="helloButton" layoutX="8.0" layoutY="6.0" text="Load Image"
+                                            textOverrun="CLIP"/>
+                                    <ComboBox fx:id="comboBoxMaxRollAngleDeviation" layoutX="216.0" layoutY="6.0"
+                                              prefHeight="25.0" prefWidth="48.0"/>
+                                    <Label layoutX="109.0" layoutY="10.0" prefHeight="17.0" prefWidth="98.0"
+                                           text="Roll angle deviation">
+                                        <font>
+                                            <Font size="10.0"/>
+                                        </font>
+                                    </Label>
+                                    <ComboBox fx:id="comboBoxMaxYawAngleDeviation" layoutX="413.0" layoutY="6.0"
+                                              prefHeight="25.0" prefWidth="48.0"/>
+                                    <Label layoutX="272.0" layoutY="10.0" prefHeight="17.0" prefWidth="132.0"
+                                           text="Max yaw angle deviation">
+                                        <font>
+                                            <Font size="10.0"/>
+                                        </font>
+                                    </Label>
+                                </children>
+                            </Pane>
+                            <Pane fx:id="paneview" layoutY="50.0" prefHeight="490.0" prefWidth="790.0">
+                                <children>
+                                    <SwingNode fx:id="swingNode"/>
+                                </children>
+                            </Pane>
+                        </children>
+                        <opaqueInsets>
+                            <Insets/>
+                        </opaqueInsets>
+                        <VBox.margin>
+                            <Insets left="5.0" right="5.0"/>
+                        </VBox.margin>
+                    </Pane>
+                    <StackPane alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="800.0">
+                        <children>
+                            <CheckBox mnemonicParsing="false" text="Zoom to fit">
+                                <StackPane.margin>
+                                    <Insets left="5.0"/>
+                                </StackPane.margin>
+                                <font>
+                                    <Font size="11.0"/>
+                                </font>
+                            </CheckBox>
+                        </children>
+                    </StackPane>
+                </VBox>
+            </content>
+        </Tab>
+        <Tab closable="false" text="Enroll Face From Image">
+            <content>
+                <fx:include fx:id="EnrollFromImage" source="EnrollFromImage.fxml"/>
+            </content>
+        </Tab>
+        <Tab closable="false" text="Test Swing Node">
+            <content>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.biometrics.demo.controller.EnrollFromImage">
+    <Pane prefHeight="540.0" prefWidth="466.0" style="-fx-border-color: darkgray" fx:id="paneDetect">
+        <children>
+            <Pane layoutY="14.0" prefHeight="37.0" prefWidth="790.0" style="-fx-border-color: black;" fx:id="panelHeader">
+                <children>
+                    <Button fx:id="helloButton" layoutX="8.0" layoutY="6.0" text="Load Image" textOverrun="CLIP" />
+                    <ComboBox layoutX="216.0" layoutY="6.0" prefHeight="25.0" prefWidth="48.0" fx:id="comboBoxMaxRollAngleDeviation" />
+                    <Label layoutX="109.0" layoutY="10.0" prefHeight="17.0" prefWidth="98.0" text="Roll angle deviation">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <ComboBox layoutX="413.0" layoutY="6.0" prefHeight="25.0" prefWidth="48.0" fx:id="comboBoxMaxYawAngleDeviation"/>
+                    <Label layoutX="272.0" layoutY="10.0" prefHeight="17.0" prefWidth="132.0" text="Max yaw angle deviation">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <StackPane fx:id="imageView" layoutY="50.0" prefHeight="490.0" prefWidth="790.0" />
+        </children>
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+        </VBox.margin>
+    </Pane>
+    <StackPane alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="800.0">
+        <children>
+            <CheckBox mnemonicParsing="false" text="Zoom to fit">
+                <StackPane.margin>
+                    <Insets left="5.0" />
+                </StackPane.margin>
+                <font>
+                    <Font size="11.0" />
+                </font>
+            </CheckBox>
+        </children>
+    </StackPane>
+</VBox>
