@@ -29,6 +29,7 @@ public class PrimaryStageInitializer implements ApplicationListener<StageReadyEv
         Parent p = fxWeaver.loadView(MainController.class);
         Scene scene = new Scene(p,800,600);
         stage.setScene(scene);
+        scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
         stage.show();
     }
 }

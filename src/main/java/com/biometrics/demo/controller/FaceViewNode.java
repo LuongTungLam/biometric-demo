@@ -30,6 +30,7 @@ public class FaceViewNode extends SwingNode{
             swingNode.setContent(scrollPane);
         });
     }
+
     public final NFace getFace() {
         return face.get();
     }

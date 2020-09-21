@@ -1,7 +1,6 @@
 package com.biometrics.demo;
 
 import com.biometrics.demo.application.BiometricsApplication;
-import com.neurotec.tutorials.util.LibraryManager;
 import javafx.application.Application;
 import javafx.scene.Node;
 import net.rgielen.fxweaver.core.FxControllerAndView;
@@ -19,7 +18,6 @@ import org.springframework.context.annotation.Scope;
 public class BiometricsUiApplication {
 
     public static void main(String[] args) {
-        LibraryManager.initLibraryPath();
         Application.launch(BiometricsApplication.class,args);
     }
     @Bean

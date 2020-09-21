@@ -15,14 +15,9 @@ public class BiometricsApplication extends Application {
 
     @Override
     public void init() throws Exception {
-        ApplicationContextInitializer<GenericApplicationContext> initializer =
-                context -> {
-                    context.registerBean(Application.class, () -> BiometricsApplication.this);
-                    context.registerBean(Parameters.class, this::getParameters);
-                };
         this.context = new SpringApplicationBuilder()
                 .sources(BiometricsUiApplication.class)
-                .initializers(initializer)
+                .headless(false)
                 .run(getParameters().getRaw().toArray(new String[0]));
     }
 
@@ -33,7 +28,7 @@ public class BiometricsApplication extends Application {
 
     @Override
     public void stop() throws Exception {
-        this.context.close();
+        context.close();
         Platform.exit();
     }
 }
