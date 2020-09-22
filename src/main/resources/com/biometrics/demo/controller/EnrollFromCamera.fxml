@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biometrics.demo.controller.EnrollFromCamera">
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biometrics.demo.controller.EnrollFromCamera">
     <Pane fx:id="paneDetect" prefHeight="540.0" prefWidth="466.0" style="-fx-border-color: darkgray">
         <children>
-            <Pane fx:id="panelHeader" layoutY="14.0" prefHeight="37.0" prefWidth="790.0" style="-fx-border-color: black;">
+            <Pane fx:id="panelHeader" layoutY="14.0" prefHeight="37.0" prefWidth="790.0"
+                  style="-fx-border-color: black;">
                 <children>
-                    <Button fx:id="cameraChoose" layoutX="8.0" layoutY="6.0" text="Load Camera" textOverrun="CLIP" />
-                    <ComboBox fx:id="comboBoxCamera" layoutX="194.0" layoutY="6.0" prefHeight="25.0" prefWidth="326.0" />
+                    <Button fx:id="cameraChoose" layoutX="8.0" layoutY="6.0" onAction="#onLoad" text="Load Camera"
+                            textOverrun="CLIP"/>
+                    <ComboBox fx:id="comboBoxCamera" layoutX="194.0" layoutY="6.0" prefHeight="25.0" prefWidth="326.0"/>
                     <Label layoutX="109.0" layoutY="10.0" prefHeight="17.0" prefWidth="50.0" text="Camera">
                         <font>
-                            <Font size="10.0" />
+                            <Font size="10.0"/>
                         </font>
                     </Label>
                 </children>
             </Pane>
-            <Pane fx:id="cameraView" layoutY="50.0" prefHeight="490.0" prefWidth="790.0" />
+            <StackPane fx:id="paneView" layoutY="50.0" prefHeight="490.0" prefWidth="790.0"/>
         </children>
         <opaqueInsets>
-            <Insets />
+            <Insets/>
         </opaqueInsets>
         <VBox.margin>
-            <Insets left="5.0" right="5.0" />
+            <Insets left="5.0" right="5.0"/>
         </VBox.margin>
     </Pane>
-    <StackPane fx:id="paneView" layoutY="50.0" prefHeight="490.0" prefWidth="790.0"/>
 </VBox>
