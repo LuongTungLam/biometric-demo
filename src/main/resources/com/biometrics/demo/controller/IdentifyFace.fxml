@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biometrics.demo.controller.IdentifyFace">
+    <Pane fx:id="paneDetect" prefHeight="405.0" prefWidth="791.0" style="-fx-border-color: darkgray">
+        <children>
+            <Pane fx:id="panelHeader" layoutY="14.0" prefHeight="37.0" prefWidth="790.0" style="-fx-border-color: black;">
+                <children>
+                    <Button fx:id="openTemplate" layoutX="14.0" layoutY="6.0" onAction="#openTemplate" text="Load Template" textOverrun="CLIP" />
+                    <Label fx:id="lblTemplateCount" layoutX="123.0" layoutY="10.0" prefHeight="17.0" prefWidth="132.0" />
+                </children>
+            </Pane>
+            <StackPane fx:id="paneView" layoutY="97.0" prefHeight="309.0" prefWidth="790.0" />
+         <Button fx:id="openFile" layoutX="14.0" layoutY="63.0" onAction="#openFile" text="open" textOverrun="CLIP" />
+        </children>
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+        </VBox.margin>
+    </Pane>
+    <Pane prefHeight="177.0" prefWidth="802.0">
+      <children>
+         <TableView fx:id="viewTemplate" layoutX="4.0" layoutY="44.0" prefHeight="125.0" prefWidth="794.0">
+
+         </TableView>
+         <Button fx:id="identify" layoutX="29.0" layoutY="11.0" onAction="#identify" text="Identify" textOverrun="CLIP" />
+         <ComboBox fx:id="comboBoxMatchingFarThreshold" layoutX="95.0" layoutY="11.0" prefHeight="25.0" prefWidth="94.0" />
+      </children>
+    </Pane>
+</VBox>

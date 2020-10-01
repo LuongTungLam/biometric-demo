@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biometrics.demo.controller.CaptureIcaoCompliantImage">
+    <Pane fx:id="paneDetect" prefHeight="600.0" prefWidth="800.0" style="-fx-border-color: darkgray">
+        <children>
+            <Pane fx:id="panelHeader" layoutY="14.0" prefHeight="37.0" prefWidth="790.0" style="-fx-border-color: black;">
+                <children>
+                    <Button fx:id="startCamera" layoutX="8.0" layoutY="6.0" onAction="#startCamera" text="Start Camera" textOverrun="CLIP" />
+                    <ComboBox fx:id="comboBoxCamera" layoutX="223.0" layoutY="6.0" prefHeight="25.0" prefWidth="326.0" />
+                    <Button fx:id="stopCamera" layoutX="698.0" layoutY="6.0" onAction="#stopCamera" text="Stop Camera" textOverrun="CLIP" />
+                    <Button fx:id="saveImage" layoutX="611.0" layoutY="6.0" onAction="#saveImage" text="Save Image" textOverrun="CLIP" />
+<!--                    <CheckBox fx:id="cbAutomatic" layoutX="449.0" layoutY="10.0" mnemonicParsing="false" text="Automatic" />-->
+<!--                    <CheckBox fx:id="cbCheckLiveness" layoutX="530.0" layoutY="10.0" mnemonicParsing="false" text="Liveness" />-->
+                </children>
+            </Pane>
+            <StackPane fx:id="paneView" layoutX="223.0" layoutY="50.0" prefHeight="467.0" prefWidth="567.0" />
+            <Button fx:id="startExtraction" layoutX="14.0" layoutY="530.0" onAction="#startExtraction" text="Start Extraction" textOverrun="CLIP" />
+            <Button fx:id="saveTemplate" layoutX="133.0" layoutY="530.0" onAction="#saveTemplate" text="Save Template" textOverrun="CLIP" />
+         <StackPane fx:id="paneView1" layoutY="50.0" prefHeight="467.0" prefWidth="209.0" />
+        </children>
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+        </VBox.margin>
+    </Pane>
+</VBox>

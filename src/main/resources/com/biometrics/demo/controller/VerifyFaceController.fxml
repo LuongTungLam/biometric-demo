@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biometrics.demo.controller.VerifyFaceController">
+    <Pane fx:id="paneDetect" prefHeight="540.0" prefWidth="791.0" style="-fx-border-color: darkgray">
+        <children>
+            <Pane fx:id="panelHeader" layoutY="14.0" prefHeight="57.0" prefWidth="790.0" style="-fx-border-color: black;">
+                <children>
+                    <Button fx:id="leftButton" layoutX="113.0" layoutY="16.0" onAction="#openLeft" text="Load Image" textOverrun="CLIP" />
+                    <Button fx:id="rightButton" layoutX="567.0" layoutY="16.0" onAction="#openRight" text="Load Image" textOverrun="CLIP" />
+                    <ComboBox fx:id="comboBoxMatchingFarThreshold" layoutX="320.0" layoutY="16.0" prefWidth="150.0" />
+                </children>
+            </Pane>
+            <StackPane fx:id="leftView" layoutY="71.0" prefHeight="409.0" prefWidth="380.0" />
+            <StackPane fx:id="rightView" layoutX="410.0" layoutY="71.0" prefHeight="409.0" prefWidth="380.0" />
+            <StackPane layoutX="1.0" layoutY="500.0" prefHeight="38.0" prefWidth="790.0" style="-fx-border-color: black;">
+                <children>
+                    <Button fx:id="verifyFaces" mnemonicParsing="false" onAction="#verify" text="Verify" />
+                </children>
+            </StackPane>
+        </children>
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+        </VBox.margin>
+    </Pane>
+</VBox>

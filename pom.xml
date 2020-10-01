@@ -66,12 +66,12 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
-            <version>16-ea+1</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>16-ea+1</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>
@@ -92,7 +92,40 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-swing</artifactId>
-            <version>16-ea+1</version>
+            <version>${javafx.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.controlsfx/controlsfx &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.controlsfx</groupId>-->
+<!--            <artifactId>controlsfx</artifactId>-->
+<!--            <version>11.0.2</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx-controls</artifactId>
+            <version>11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jfoenix</groupId>
+            <artifactId>jfoenix</artifactId>
+            <version>9.0.10</version>
+        </dependency>
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx-commons</artifactId>
+            <version>11.0</version>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>de.jensd</groupId>
@@ -100,16 +133,23 @@
             <version>8.9</version>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx-fontawesome</artifactId>
+            <version>4.7.0-9.1.2</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.github.sarxos/webcam-capture -->
+        <!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-materialdesignfont -->
         <dependency>
-            <groupId>com.github.sarxos</groupId>
-            <artifactId>webcam-capture</artifactId>
-            <version>0.3.12</version>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx-materialdesignfont</artifactId>
+            <version>2.0.26-9.1.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-materialicons -->
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx-materialicons</artifactId>
+            <version>2.2.0-11</version>
+        </dependency>
+
     </dependencies>
 
     <repositories>
@@ -153,5 +193,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

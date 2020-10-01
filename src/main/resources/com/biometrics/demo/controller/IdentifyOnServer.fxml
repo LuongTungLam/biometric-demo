@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biometrics.demo.controller.IdentifyOnServer">
+    <Pane fx:id="paneDetect" prefHeight="577.0" prefWidth="794.0" style="-fx-border-color: darkgray">
+        <children>
+            <Pane fx:id="panelHeader" layoutY="14.0" prefHeight="37.0" prefWidth="790.0" style="-fx-border-color: black;">
+                <children>
+                    <Label fx:id="lblHeader" layoutX="21.0" layoutY="10.0" prefHeight="17.0" prefWidth="751.0" />
+                </children>
+            </Pane>
+            <StackPane fx:id="paneView" layoutY="97.0" prefHeight="469.0" prefWidth="790.0" />
+            <Button fx:id="openFile" layoutX="14.0" layoutY="63.0" onAction="#openFile" text="open" textOverrun="CLIP" />
+            <Button fx:id="identify" layoutX="82.0" layoutY="63.0" onAction="#identify" text="Identify" textOverrun="CLIP" />
+            <ComboBox fx:id="comboBoxMatchingFarThreshold" layoutX="148.0" layoutY="63.0" prefHeight="25.0" prefWidth="94.0" />
+        </children>
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+        </VBox.margin>
+    </Pane>
+</VBox>

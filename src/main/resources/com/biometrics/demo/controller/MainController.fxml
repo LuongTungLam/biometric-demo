@@ -10,7 +10,7 @@
          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
          fx:controller="com.biometrics.demo.controller.MainController">
     <tabs>
-        <Tab closable="false" text="Detect Face">
+        <Tab closable="false" text="Enroll Face Image">
             <content>
                 <VBox>
                     <Pane fx:id="paneDetect" prefHeight="540.0" prefWidth="466.0" style="-fx-border-color: darkgray">
@@ -18,24 +18,7 @@
                             <Pane fx:id="panelHeader" layoutY="14.0" prefHeight="37.0" prefWidth="790.0"
                                   style="-fx-border-color: black;">
                                 <children>
-                                    <Button fx:id="helloButton" layoutX="8.0" layoutY="6.0" styleClass="open-file-btn"
-                                            text="Load Image" textOverrun="CLIP"/>
-                                    <ComboBox fx:id="comboBoxMaxRollAngleDeviation" layoutX="216.0" layoutY="6.0"
-                                              prefHeight="25.0" prefWidth="48.0"/>
-                                    <Label layoutX="109.0" layoutY="10.0" prefHeight="17.0" prefWidth="98.0"
-                                           text="Roll angle deviation">
-                                        <font>
-                                            <Font size="10.0"/>
-                                        </font>
-                                    </Label>
-                                    <ComboBox fx:id="comboBoxMaxYawAngleDeviation" layoutX="413.0" layoutY="6.0"
-                                              prefHeight="25.0" prefWidth="48.0"/>
-                                    <Label layoutX="272.0" layoutY="10.0" prefHeight="17.0" prefWidth="132.0"
-                                           text="Max yaw angle deviation">
-                                        <font>
-                                            <Font size="10.0"/>
-                                        </font>
-                                    </Label>
+                                    <Button fx:id="helloButton" layoutX="8.0" layoutY="6.0" styleClass="open-file-btn" text="Load Image" textOverrun="CLIP"/>
                                 </children>
                             </Pane>
                             <StackPane fx:id="paneView" layoutY="50.0" prefHeight="490.0" prefWidth="790.0"/>
@@ -62,7 +45,7 @@
                 </VBox>
             </content>
         </Tab>
-        <Tab closable="false" text="Enroll Face From Image">
+        <Tab closable="false" text="DetectFace">
             <content>
                 <fx:include fx:id="EnrollFromImage" source="EnrollFromImage.fxml"/>
             </content>
@@ -70,6 +53,41 @@
         <Tab closable="false" text="Enroll From Camera">
             <content>
                 <fx:include fx:id="EnrollFromCamera" source="EnrollFromCamera.fxml"/>
+            </content>
+        </Tab>
+        <Tab closable="false" text="Token Face Image">
+            <content>
+                <fx:include fx:id="TokenFaceImage" source="TokenFaceImage.fxml"/>
+            </content>
+        </Tab>
+        <Tab closable="false" text="Match Multiple Faces">
+            <content>
+                <fx:include fx:id="MatchMultipleFaces" source="MatchMultipleFaces.fxml"/>
+            </content>
+        </Tab>
+        <Tab closable="false" text="Verify Faces">
+            <content>
+                <fx:include fx:id="VerifyFace" source="VerifyFaceController.fxml"/>
+            </content>
+        </Tab>
+        <Tab closable="false" text="Capture Icao">
+            <content>
+                <fx:include fx:id="CaptureIcao" source="CaptureIcaoCompliantImage.fxml"/>
+            </content>
+        </Tab>
+        <Tab closable="false" text="Generalize Face">
+            <content>
+                <fx:include fx:id="GeneralizeFace" source="GeneralizeFace.fxml"/>
+            </content>
+        </Tab>
+        <Tab closable="false" text="Identify Face">
+            <content>
+                <fx:include fx:id="IdentifyFace" source="IdentifyFace.fxml"/>
+            </content>
+        </Tab>
+        <Tab closable="false" text="Identify On Server">
+            <content>
+                <fx:include fx:id="IdentifyOnServer" source="IdentifyOnServer.fxml"/>
             </content>
         </Tab>
     </tabs>

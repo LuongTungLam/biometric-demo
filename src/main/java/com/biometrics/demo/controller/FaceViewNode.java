@@ -1,6 +1,5 @@
 package com.biometrics.demo.controller;
 
-import com.biometrics.demo.controller.MainController;
 import com.neurotec.biometrics.NFace;
 import com.neurotec.biometrics.swing.NFaceView;
 import javafx.beans.property.ObjectProperty;

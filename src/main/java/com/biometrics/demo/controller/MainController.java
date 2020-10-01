@@ -1,10 +1,12 @@
 package com.biometrics.demo.controller;
 
-import com.biometrics.demo.application.PrimaryStageInitializer;
 import com.neurotec.biometrics.*;
 import com.neurotec.biometrics.client.NBiometricClient;
 import com.neurotec.images.NImage;
 import com.neurotec.io.NFile;
+import com.neurotec.licensing.NLicense;
+import com.neurotec.util.concurrent.CompletionHandler;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -12,7 +14,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import lombok.extern.log4j.Log4j2;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
@@ -53,6 +54,7 @@ public class MainController {
     private ComboBox comboBoxMaxRollAngleDeviation;
     @FXML
     private ComboBox comboBoxMaxYawAngleDeviation;
+    private final FaceDetectionHandler faceDetectionHandler = new FaceDetectionHandler();
 
     public MainController(@Value("${spring.application.demo.greeting}") String greeting, FxWeaver fxWeaver, NBiometricClient biometricClient) {
         super();
@@ -65,7 +67,6 @@ public class MainController {
 
     @FXML
     public void initialize() {
-//        log.info("FacesDetermindeAge ? " + biometricClient.isFacesDetermineAge());
         this.paneView.getChildren().add(faceViewNode);
         this.paneView.setAlignment(Pos.CENTER);
         helloButton.setOnAction(
@@ -94,23 +95,15 @@ public class MainController {
             face.setImage(image);
             subject.getFaces().add(face);
             this.faceViewNode.setFace(face);
-            createTemplate();
+            createTemplate(image);
         }
     }
 
-    private void createTemplate() throws IOException {
+    private void createTemplate(NImage faceImage) throws IOException {
         if (subject != null) {
-            NBiometricTask task = biometricClient.createTask(EnumSet.of(NBiometricOperation.DETECT_SEGMENTS), subject);
-            biometricClient.performTask(task);
-            if (task.getStatus() == NBiometricStatus.OK) {
-                NBiometricStatus status = biometricClient.createTemplate(subject);
-                if (status == NBiometricStatus.OK) {
-                    File file = fc.showSaveDialog(null);
-                   if (file != null) {
-                    NFile.writeAllBytes(fileName, subject.getTemplateBuffer());
-                   }
-                }
-            }
+            updateFacesTools();
+            biometricClient.detectFaces(faceImage, null, faceDetectionHandler);
+
         }
     }
 
@@ -144,5 +137,50 @@ public class MainController {
 
     private void clear() {
         paneView.getChildren().clear();
+    }
+
+    protected void updateFacesTools() {
+        biometricClient.reset();
+        boolean faceSegmentsDetectionActivated;
+        try {
+            faceSegmentsDetectionActivated = NLicense.isComponentActivated("Biometrics.FaceSegmentsDetection");
+        } catch (IOException e) {
+            e.printStackTrace();
+            faceSegmentsDetectionActivated = false;
+        }
+        biometricClient.setFacesDetectAllFeaturePoints(faceSegmentsDetectionActivated);
+        biometricClient.setFacesDetectBaseFeaturePoints(faceSegmentsDetectionActivated);
+        biometricClient.setFacesDetermineGender(faceSegmentsDetectionActivated);
+        biometricClient.setFacesDetermineAge(faceSegmentsDetectionActivated);
+        biometricClient.setFacesDetectProperties(faceSegmentsDetectionActivated);
+        biometricClient.setFacesRecognizeExpression(faceSegmentsDetectionActivated);
+    }
+
+    void setFace(NFace face) {
+        faceViewNode.setFace(face);
+    }
+
+    private class FaceDetectionHandler implements CompletionHandler<NFace, Object> {
+
+        @Override
+        public void completed(final NFace result, final Object attachment) {
+            Platform.runLater(() -> {
+                setFace(result);
+            });
+        }
+
+        @Override
+        public void failed(final Throwable th, final Object attachment) {
+            SwingUtilities.invokeLater(new Runnable() {
+
+                @Override
+                public void run() {
+//                    showError(th);
+//                    updateTemplateCreationStatus(false);
+                }
+
+            });
+        }
+
     }
 }

@@ -1,6 +1,4 @@
 package com.biometrics.demo;
-
-import com.biometrics.demo.application.BiometricsApplication;
 import javafx.application.Application;
 import javafx.scene.Node;
 import net.rgielen.fxweaver.core.FxControllerAndView;
@@ -13,13 +11,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
-
+import com.biometrics.demo.application.BiometricsApplication;
 @SpringBootApplication
 public class BiometricsUiApplication {
 
     public static void main(String[] args) {
         Application.launch(BiometricsApplication.class,args);
     }
+
     @Bean
     public FxWeaver fxWeaver(ConfigurableApplicationContext applicationContext) {
         return new SpringFxWeaver(applicationContext);

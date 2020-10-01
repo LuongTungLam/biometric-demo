@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="enrollImage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biometrics.demo.controller.EnrollImage">
+    <children>
+        <Label layoutX="42.0" layoutY="49.0" prefHeight="39.0" prefWidth="208.0" text="Enroll Face Image">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Label>
+        <VBox layoutX="11.0" layoutY="152.0" prefHeight="414.0" prefWidth="586.0">
+            <children>
+                <JFXButton prefHeight="26.0" prefWidth="121.0" text="Choose Image">
+                    <graphic>
+                        <ImageView fitHeight="19.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../images/photo.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <StackPane prefHeight="374.0" prefWidth="586.0" style="-fx-background-color: #F0F8FF;"/>
+                <JFXCheckBox text="Zoom to fit"/>
+            </children>
+        </VBox>
+        <Pane layoutX="9.0" layoutY="11.0"/>
+    </children>
+</AnchorPane>

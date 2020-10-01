@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biometrics.demo.controller.EnrollFromImage">
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biometrics.demo.controller.TokenFaceImage">
     <Pane fx:id="paneDetect" prefHeight="540.0" prefWidth="466.0" style="-fx-border-color: darkgray">
         <children>
             <Pane fx:id="panelHeader" layoutY="14.0" prefHeight="37.0" prefWidth="790.0" style="-fx-border-color: black;">
@@ -13,7 +13,10 @@
                     <Button fx:id="helloButton" layoutX="8.0" layoutY="6.0" text="Load Image" textOverrun="CLIP" />
                 </children>
             </Pane>
-            <StackPane fx:id="paneView" layoutY="51.0" prefHeight="490.0" prefWidth="790.0" />
+            <StackPane fx:id="paneView" layoutY="50.0" prefHeight="490.0" prefWidth="368.0" />
+            <StackPane fx:id="paneView1" layoutX="409.0" layoutY="50.0" prefHeight="490.0" prefWidth="368.0" >
+                <Label fx:id="lblQuality"/>
+            </StackPane>
         </children>
         <opaqueInsets>
             <Insets />

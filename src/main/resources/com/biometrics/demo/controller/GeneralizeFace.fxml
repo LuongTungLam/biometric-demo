@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="558.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biometrics.demo.controller.GeneralizeFace">
+    <Pane fx:id="paneDetect" prefHeight="519.0" prefWidth="789.0" style="-fx-border-color: darkgray">
+        <children>
+            <Pane fx:id="panelHeader" layoutY="14.0" prefHeight="37.0" prefWidth="790.0" style="-fx-border-color: black;">
+                <children>
+                    <Button fx:id="openFile" layoutX="8.0" layoutY="6.0" onAction="#openFile" text="Load Image" textOverrun="CLIP" />
+                    <Label fx:id="lblImageCount" layoutX="101.0" layoutY="10.0" />
+                </children>
+            </Pane>
+            <StackPane fx:id="paneView" layoutY="51.0" prefHeight="473.0" prefWidth="790.0" />
+        </children>
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+        </VBox.margin>
+    </Pane>
+    <Pane prefHeight="33.0" prefWidth="798.0">
+      <children>
+         <Button fx:id="saveTemplate" layoutX="14.0" layoutY="7.0" onAction="#saveTemplate" text="Save Template" textOverrun="CLIP" />
+         <Label fx:id="lblStatus" layoutX="125.0" layoutY="11.0" />
+      </children>
+    </Pane>
+</VBox>

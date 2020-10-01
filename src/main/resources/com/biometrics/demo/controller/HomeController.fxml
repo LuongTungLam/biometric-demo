@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="867.0" style="-fx-border-radius: 0 0 18 18;"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.biometrics.demo.controller.HomeController">
+    <children>
+        <AnchorPane prefHeight="600.0" prefWidth="58.0" style="-fx-background-color: #E6E6FA;"
+                    AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="8.0" layoutY="41.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../images/Logo.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="26.0" fitWidth="18.0" layoutX="20.0" layoutY="107.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../images/loupe.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="15.0" layoutY="512.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../images/help.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="20.0" layoutY="138.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../images/plus.png"/>
+                    </image>
+                </ImageView>
+                <Circle fill="DODGERBLUE" layoutX="29.0" layoutY="565.0" radius="15.0" stroke="BLACK"
+                        strokeType="INSIDE"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="58.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #F0F8FF;"
+                    AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox layoutY="-1.0" prefHeight="600.0" prefWidth="200.0" AnchorPane.bottomAnchor="1.0"
+                      AnchorPane.topAnchor="-1.0">
+                    <children>
+                        <Pane prefHeight="142.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fitHeight="49.0" fitWidth="52.0" layoutX="143.0" layoutY="41.0"
+                                           pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../images/face-recognition.png"/>
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="14.0" layoutY="41.0" prefHeight="49.0" prefWidth="129.0"
+                                       text="Biometrics App">
+                                    <font>
+                                        <Font name="System Bold" size="17.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+                        <JFXButton fx:id="openDetect" onAction="#switchToDetectPane" alignment="BASELINE_LEFT"
+                                   graphicTextGap="20.0" layoutX="10.0" layoutY="160.0" mnemonicParsing="false"
+                                   prefHeight="39.0" prefWidth="200.0" style="-fx-background-color: #F0F8FF;"
+                                   text="Detect">
+                            <graphic>
+                                <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../images/face-detection.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="30.0"/>
+                            </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="openEnrollImage" onAction="#switchToErollImage" alignment="BASELINE_LEFT"
+                                   graphicTextGap="20.0" layoutX="10.0" layoutY="160.0" mnemonicParsing="false"
+                                   prefHeight="39.0" prefWidth="200.0" style="-fx-background-color: #F0F8FF;"
+                                   text="Enroll Image">
+                            <graphic>
+                                <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../images/facial-recognition.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="30.0"/>
+                            </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="enrollCamera" onAction="#switchToErollCamera" alignment="BASELINE_LEFT"
+                                   graphicTextGap="20.0" layoutX="10.0" layoutY="199.0" mnemonicParsing="false"
+                                   prefHeight="39.0" prefWidth="200.0" style="-fx-background-color: #F0F8FF;"
+                                   text="Enroll Camera">
+                            <graphic>
+                                <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../images/video-call.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="30.0"/>
+                            </padding>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="199.0"
+                                   mnemonicParsing="false" prefHeight="39.0" prefWidth="200.0"
+                                   style="-fx-background-color: #F0F8FF;" text="Identify">
+                            <graphic>
+                                <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../images/laugh.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="30.0"/>
+                            </padding>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="199.0"
+                                   mnemonicParsing="false" prefHeight="39.0" prefWidth="200.0"
+                                   style="-fx-background-color: #F0F8FF;" text="JFXButton">
+                            <graphic>
+                                <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../images/face-recognition.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="30.0"/>
+                            </padding>
+                        </JFXButton>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="anchorPaneItems" layoutX="258.0" prefHeight="600.0" prefWidth="608.0"
+                    style="-fx-background-color: white;"/>
+    </children>
+</AnchorPane>
